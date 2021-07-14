@@ -1,23 +1,12 @@
 class User
-  attr_reader :name,
-              :jokes
+    attr_reader :names, :jokes
 
-  def initialize(name)
-    @name = name
+  def initialize (name)
+    @names = names
     @jokes = []
   end
 
-  def learn(joke)
-    @jokes << joke
-  end
-
-  def tell(user, joke)
-    user.learn(joke)
-  end
-
-  def joke_by_id(id)
-    @jokes.find do |joke|
-      joke.id == id
-    end
+  def learn(jokes)
+    user << jokes
   end
 end
